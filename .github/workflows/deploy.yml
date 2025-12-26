@@ -27,8 +27,6 @@ jobs:
 
       - name: Deploy to VM
         uses: appleboy/ssh-action@v1.0.3
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USERNAME }}
@@ -36,7 +34,7 @@ jobs:
           port: 22
           script: |
             cd devteam-showcase
-            git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/${{ github.repository }}.git
+            git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
             git pull origin main
             npm install
             npm run build
