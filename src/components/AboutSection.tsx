@@ -4,6 +4,10 @@ import { useRef } from "react";
 import { Users, Target, Rocket, Heart } from "lucide-react";
 import DevLogo from "./DevLogo";
 
+interface AboutSectionProps {
+  onTeamClick?: () => void;
+}
+
 const features = [
   {
     icon: Target,
@@ -14,6 +18,7 @@ const features = [
     icon: Users,
     title: "The Team",
     description: "A passionate group of developers, designers, and innovators working together to build impactful projects.",
+    isTeamLink: true,
   },
   {
     icon: Rocket,
@@ -27,7 +32,7 @@ const features = [
   },
 ];
 
-const AboutSection = () => {
+const AboutSection = ({ onTeamClick }: AboutSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -60,7 +65,10 @@ const AboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card border border-border rounded-xl p-6 card-glow group"
+              onClick={() => feature.isTeamLink && onTeamClick?.()}
+              className={`bg-card border border-border rounded-xl p-6 card-glow group ${
+                feature.isTeamLink ? "cursor-pointer hover:border-primary transition-colors" : ""
+              }`}
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <feature.icon className="w-6 h-6 text-primary" />

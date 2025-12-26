@@ -3,15 +3,20 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import DevLogo from "./DevLogo";
 
+interface NavbarProps {
+  onTeamClick?: () => void;
+}
+
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Team", href: "#team", onClick: true },
   { name: "Projects", href: "#projects" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ onTeamClick }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -33,10 +38,16 @@ const Navbar = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => {
+                  if (link.onClick && onTeamClick) {
+                    e.preventDefault();
+                    onTeamClick();
+                  }
+                }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium cursor-pointer"
               >
                 {link.name}
               </motion.a>
@@ -67,8 +78,14 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2"
+                onClick={(e) => {
+                  if (link.onClick && onTeamClick) {
+                    e.preventDefault();
+                    onTeamClick();
+                  }
+                  setIsOpen(false);
+                }}
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2 cursor-pointer"
               >
                 {link.name}
               </a>
