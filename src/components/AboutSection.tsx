@@ -4,10 +4,6 @@ import { useRef } from "react";
 import { Users, Target, Rocket, Heart } from "lucide-react";
 import DevLogo from "./DevLogo";
 
-interface AboutSectionProps {
-  onTeamClick?: () => void;
-}
-
 const features = [
   {
     icon: Target,
@@ -32,7 +28,7 @@ const features = [
   },
 ];
 
-const AboutSection = ({ onTeamClick }: AboutSectionProps) => {
+const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -65,7 +61,7 @@ const AboutSection = ({ onTeamClick }: AboutSectionProps) => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => feature.isTeamLink && onTeamClick?.()}
+              onClick={() => feature.isTeamLink && document.querySelector('#team')?.scrollIntoView({ behavior: 'smooth' })}
               className={`bg-card border border-border rounded-xl p-6 card-glow group ${
                 feature.isTeamLink ? "cursor-pointer hover:border-primary transition-colors" : ""
               }`}

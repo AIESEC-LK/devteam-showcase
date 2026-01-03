@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
+import TeamSection from "../components/TeamSection";
 import ProjectsSection from "../components/ProjectsSection";
 import GallerySection from "../components/GallerySection";
-import TeamModal from "../components/TeamModal";
 import Footer from "../components/Footer";
 
 const Index = () => {
-  const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
-
   useEffect(() => {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -27,15 +25,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar onTeamClick={() => setIsTeamModalOpen(true)} />
+      <Navbar />
       <main>
         <HeroSection />
-        <AboutSection onTeamClick={() => setIsTeamModalOpen(true)} />
+        <AboutSection />
+        <TeamSection />
         <ProjectsSection />
         <GallerySection />
       </main>
       <Footer />
-      <TeamModal isOpen={isTeamModalOpen} onClose={() => setIsTeamModalOpen(false)} />
     </div>
   );
 };

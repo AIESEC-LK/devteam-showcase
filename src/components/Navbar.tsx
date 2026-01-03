@@ -4,20 +4,16 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import DevLogo from "./DevLogo";
 
-interface NavbarProps {
-  onTeamClick?: () => void;
-}
-
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Team", href: "#team", onClick: true },
+  { name: "Team", href: "#team" },
   { name: "Projects", href: "#projects" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
 ];
 
-const Navbar = ({ onTeamClick }: NavbarProps) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -40,12 +36,6 @@ const Navbar = ({ onTeamClick }: NavbarProps) => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => {
-                  if (link.onClick && onTeamClick) {
-                    e.preventDefault();
-                    onTeamClick();
-                  }
-                }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -87,13 +77,7 @@ const Navbar = ({ onTeamClick }: NavbarProps) => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => {
-                  if (link.onClick && onTeamClick) {
-                    e.preventDefault();
-                    onTeamClick();
-                  }
-                  setIsOpen(false);
-                }}
+                onClick={() => setIsOpen(false)}
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2 cursor-pointer"
               >
                 {link.name}

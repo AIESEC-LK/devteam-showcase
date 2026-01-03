@@ -114,10 +114,11 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 16,
-    name: "Himeth Wimalagunaratne",
+    name: "Tharuka Gamage",
     position: "Software Engineer",
-    image: "/memberPhotos/Himeth Wimalagunaratne.jpg",
+    image: "/memberPhotos/Tharuka_Gamage.png",
     description: "Software Development",
+
   },
   {
     id: 17,
@@ -144,14 +145,14 @@ export const teamMembers: TeamMember[] = [
     id: 20,
     name: "Sanuji Walgampaya",
     position: "Software Engineer",
-    image: "/memberPhotos/Sanuji Walgampaya.HEIC",
+    image: "/memberPhotos/Sanuji Walgampaya.jpg",
     description: "Software Development",
   },
   {
     id: 21,
-    name: "Tharuka Gamage",
+    name: "Himeth Wimalagunaratne",
     position: "Software Engineer",
-    image: "/memberPhotos/Tharuka_Gamage.jpg",
+    image: "/memberPhotos/Himeth Wimalagunaratne.jpg",
     description: "Software Development",
   },
   {
