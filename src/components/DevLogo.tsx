@@ -4,6 +4,7 @@ interface DevLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
   animated?: boolean;
   className?: string;
+  navbar?: boolean;
 }
 
 const sizeClasses = {
@@ -13,12 +14,12 @@ const sizeClasses = {
   xl: "text-6xl md:text-7xl",
 };
 
-const DevLogo = ({ size = "md", animated = true, className = "" }: DevLogoProps) => {
+const DevLogo = ({  animated = true, className = "" , navbar = true }: DevLogoProps) => {
   const Component = animated ? motion.span : "span";
   
   return (
     <Component
-      className={`font-mono font-bold tracking-tight ${sizeClasses[size]} ${className}`}
+      className={`font-mono font-bold tracking-tight ${navbar ? "lg:text-2xl" : "text-4xl xl:text-7xl"} ${className}`}
       {...(animated && {
         initial: { opacity: 0 },
         animate: { opacity: 1 },

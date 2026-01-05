@@ -89,7 +89,7 @@ const AboutSection = () => {
             </div>
             <div className="text-foreground pl-4 border-l-2 border-primary">
               "We don't just write code; we craft experiences that inspire the next generation of leaders."
-              <span className="text-muted-foreground block mt-2">— </span>
+              <span className="text-muted-foreground block mt-2"></span>
               <span className="text-primary">&lt;/Dev.Team&gt;</span>
             </div>
           </div>

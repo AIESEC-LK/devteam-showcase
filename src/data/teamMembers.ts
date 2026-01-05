@@ -3,16 +3,19 @@ export interface TeamMember {
   name: string;
   position: string;
   image: string;
-  description?: string;
+  description?: string; 
+  linkedin?: string;
 }
 
 export const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Dinuka",
-    position: "MCVP",
+    position: "MCVP IM",
     image: "/memberPhotos/Dinuka_Avinash.jpg",
     description: "අපේ FrontMan",
+    linkedin:"https://www.linkedin.com/in/dinuka-avinash/"
+
   },
   {
     id: 2,
@@ -20,6 +23,7 @@ export const teamMembers: TeamMember[] = [
     position: "Lead",
     image: "/memberPhotos/Chamod Wanigasekara.jpg",
     description: "Development Team Lead",
+    linkedin:"https://www.linkedin.com/in/chamod-wanigasekara-b99504245/"
   },
   {
     id: 3,
@@ -27,6 +31,7 @@ export const teamMembers: TeamMember[] = [
     position: "Tech Lead",
     image: "/memberPhotos/Lahiru Jayathilaka.jpg",
     description: "Technical Leadership",
+    linkedin:"https://www.linkedin.com/in/lahiru-jayathilake/"
   },
   {
     id: 4,
@@ -34,6 +39,7 @@ export const teamMembers: TeamMember[] = [
     position: "Tech Lead",
     image: "/memberPhotos/Jaindu Charindith .jpg",
     description: "Technical Leadership",
+    linkedin:"https://www.linkedin.com/in/charindith/"
   },
   {
     id: 5,
@@ -42,19 +48,14 @@ export const teamMembers: TeamMember[] = [
     image: "/memberPhotos/Sashen Matheesh.jpg",
     description: "Project Management",
   },
-  {
-    id: 6,
-    name: "Navod Abayasekera",
-    position: "Project Manager",
-    image: "/memberPhotos/Navod Abayasekera.jpg",
-    description: "Project Management",
-  },
+
   {
     id: 7,
     name: "Dinan Jayasooriya",
     position: "Project Manager",
     image: "/memberPhotos/Dinan Jayasooriya.jpg",
     description: "Project Management",
+    linkedin:"https://www.linkedin.com/in/dinan-jayasuriya-053b72263/"
   },
   {
     id: 8,
@@ -62,6 +63,7 @@ export const teamMembers: TeamMember[] = [
     position: "Cyber Security Consultant",
     image: "/memberPhotos/Akesh Chandrasiri Official Picture.jpg",
     description: "Cyber Security Specialist",
+    linkedin:"https://www.linkedin.com/in/akesh-chandrasiri-010779211/"
   },
   {
     id: 9,
@@ -69,6 +71,7 @@ export const teamMembers: TeamMember[] = [
     position: "Operations Manager",
     image: "/memberPhotos/Amaya Amarasinghe .png",
     description: "Operations Management",
+    linkedin:"https://www.linkedin.com/in/amaya-amarasinghe-7b14b3176/"
   },
   {
     id: 10,
@@ -90,6 +93,13 @@ export const teamMembers: TeamMember[] = [
     position: "Software Engineer Team Leader",
     image: "/memberPhotos/Vihanga Nimsara.jpg",
     description: "Software Engineering Team Lead",
+  },
+    {
+    id: 22,
+    name: "Vihanga Munasinghe",
+    position: "DevOps Engineer",
+    image: "/memberPhotos/Vihanga Munasinghe.jpeg",
+    description: "Software Development",
   },
   {
     id: 13,
@@ -155,13 +165,7 @@ export const teamMembers: TeamMember[] = [
     image: "/memberPhotos/Himeth Wimalagunaratne.jpg",
     description: "Software Development",
   },
-  {
-    id: 22,
-    name: "Vihanga Munasinghe",
-    position: "Software Engineer",
-    image: "/memberPhotos/Vihanga Munasinghe.jpeg",
-    description: "Software Development",
-  },
+
   {
     id: 23,
     name: "Vishan",

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
@@ -8,27 +8,29 @@ interface ProjectCardProps {
   image: string;
   tags: string[];
   liveUrl?: string;
-  githubUrl?: string;
+
   index: number;
 }
 
-const ProjectCard = ({ title, description, image, tags, liveUrl, githubUrl, index }: ProjectCardProps) => {
-  const navigate = useNavigate();
+const ProjectCard = ({ title, description, image, tags, liveUrl, index }: ProjectCardProps) => {
+  console.log(image);
+  // const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      onClick={() => navigate(`/project/${index}`)}
-      className="group bg-card border border-border rounded-xl overflow-hidden card-glow cursor-pointer"
+      // transition={{ duration: 0.5, delay: index * 0.1 }}
+      // onClick={() => navigate(`/project/${index}`)}
+      className="group bg-card border border-border rounded-xl overflow-hidden card-glow"
     >
       {/* Image Container */}
-      <div className="relative h-48 md:h-56 overflow-hidden">
+      <div className="relative h-48 md:h-56 overflow-hidden bg-muted">
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
         
@@ -59,7 +61,7 @@ const ProjectCard = ({ title, description, image, tags, liveUrl, githubUrl, inde
 
         {/* Links */}
         <div className="flex items-center gap-4">
-          {liveUrl && (
+          {liveUrl ? (
             <a
               href={liveUrl}
               target="_blank"
@@ -68,21 +70,12 @@ const ProjectCard = ({ title, description, image, tags, liveUrl, githubUrl, inde
               className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              <span>Live Demo</span>
+              <span>Visit Site</span>
             </a>
-          )}
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              <span>Source</span>
-            </a>
-          )}
+          ) : 
+          <span className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors">Comming Soon</span>
+          }
+          
         </div>
       </div>
     </motion.div>

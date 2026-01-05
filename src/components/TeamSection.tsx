@@ -48,6 +48,7 @@ const TeamSection = () => {
           <p className="text-muted-foreground text-lg">
             Want to join our team? We're always looking for passionate developers and designers!
           </p>
+          <span className=" text-primary cursor-pointer">Click Here !</span>
         </motion.div>
       </div>
     </section>

@@ -4,62 +4,11 @@ import { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-const projects = [
-  {
-    title: "Sincerely Sri Lankan",
-    description: "An immersive platform showcasing authentic Sri Lankan experiences for international volunteers. Features an interactive map, destination guides, testimonials, and comprehensive FAQ sections to help visitors discover the pearl of the Indian Ocean.",
-    image: "https://images.unsplash.com/photo-1586523969104-46e1b57529eb?w=800&auto=format&fit=crop&q=60",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://sincerely.aiesec.lk/",
-    introduction: "Sincerely Sri Lankan is a comprehensive platform designed to connect international volunteers with authentic Sri Lankan experiences. Built to promote cultural exchange and sustainable tourism.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Leaflet Maps", "Node.js", "MongoDB"],
-    team: ["John Doe", "Jane Smith", "Alex Johnson"],
-  },
-  {
-    title: "AIESEC Sri Lanka Website",
-    description: "The official website of AIESEC in Sri Lanka celebrating 30 years of youth leadership development. Showcases local chapters across 22+ universities, opportunities for exchanges, and the organization's impact on thousands of young Sri Lankans.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=60",
-    tags: ["Next.js", "TypeScript", "Modern UI/UX"],
-    liveUrl: "https://aiesec.lk/",
-    introduction: "The official digital presence of AIESEC Sri Lanka, highlighting 30 years of empowering youth through leadership and global exchange programs.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi CMS", "Vercel"],
-    team: ["Sarah Wilson", "Mike Chen", "Priya Patel"],
-  },
-  {
-    title: "Youth Leadership Hub",
-    description: "An interactive learning platform for AIESEC members to develop leadership skills through courses, workshops, and mentorship programs.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=60",
-    tags: ["Vue.js", "Node.js", "Express", "PostgreSQL"],
-    liveUrl: "https://youthhub.aiesec.lk/",
-    introduction: "A centralized hub for youth leadership development, offering personalized learning paths and community engagement features.",
-    technologies: ["Vue.js", "Node.js", "Express", "PostgreSQL", "Socket.io", "AWS"],
-    team: ["David Lee", "Emma Brown", "Raj Kumar"],
-  },
-  {
-    title: "Global Exchange Portal",
-    description: "A streamlined application system for international volunteer exchanges, featuring real-time matching and progress tracking.",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=60",
-    tags: ["React Native", "Firebase", "GraphQL"],
-    liveUrl: "https://exchange.aiesec.lk/",
-    introduction: "Facilitating seamless global exchanges by connecting volunteers with opportunities worldwide through an intuitive mobile-first platform.",
-    technologies: ["React Native", "Firebase", "GraphQL", "Apollo Client", "Stripe"],
-    team: ["Lisa Garcia", "Tom Anderson", "Nina Zhao"],
-  },
-  {
-    title: "Impact Dashboard",
-    description: "A data visualization tool that tracks and showcases the social impact of AIESEC programs across Sri Lanka and globally.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
-    tags: ["D3.js", "Python", "Django", "PostgreSQL"],
-    liveUrl: "https://impact.aiesec.lk/",
-    introduction: "Empowering stakeholders with real-time insights into AIESEC's contributions to youth development and global citizenship.",
-    technologies: ["D3.js", "Python", "Django", "PostgreSQL", "Redis", "Docker"],
-    team: ["Chris Taylor", "Anna Kim", "Carlos Rodriguez"],
-  },
-];
+import { projects } from "@/data/projects";
 
 const ProjectsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <section id="projects" className="py-24 md:py-32 relative">
@@ -79,11 +28,11 @@ const ProjectsSection = () => {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Explore the digital products we've crafted for AIESEC Sri Lanka — 
-            each project designed to inspire and empower youth across the nation.
+            each project designed to inspire and empower youth across the world.
           </p>
         </motion.div>
 
-        <Carousel opts={{ loop: true }} className="max-w-5xl mx-auto">
+        <Carousel opts={{ loop: true }} className="max-w-8xl mx-auto">
           <CarouselContent>
             {projects.map((project, index) => (
               <CarouselItem key={index} className="md:basis-1/2">
@@ -102,7 +51,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12 font-mono text-sm text-muted-foreground"
         >
-          <span className="text-code-green">{"/* More projects coming soon... */"}</span>
+          <span className="text-code-green">{"/* More interesting projects brewing in the kitchen */"}</span>
         </motion.div>
       </div>
     </section>

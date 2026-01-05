@@ -5,34 +5,49 @@ import { X } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60",
+    src: "/gallery/1.jpeg",
     alt: "Team collaboration",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&auto=format&fit=crop&q=60",
+    src: "/gallery/2.jpeg",
     alt: "Coding session",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60",
+    src: "/gallery/3.jpeg",
     alt: "Team meeting",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60",
+    src: "/gallery/4.jpeg",
     alt: "Workshop",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&auto=format&fit=crop&q=60",
+    src: "/gallery/5.jpeg",
     alt: "Team celebration",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=60",
-    alt: "Brainstorming",
-    span: "col-span-2 row-span-1",
+    src: "/gallery/6.jpg",
+    alt: "Team celebration",
+    span: "col-span-1 row-span-1",
+  },
+    {
+    src: "/gallery/7.jpeg",
+    alt: "Team celebration",
+    span: "col-span-1 row-span-1",
+  },
+    {
+    src: "/gallery/8.jpeg",
+    alt: "Team celebration",
+    span: "col-span-1 row-span-1",
+  },
+    {
+    src: "/gallery/9.jpeg",
+    alt: "Team celebration",
+    span: "col-span-1 row-span-1",
   },
 ];
 
@@ -76,11 +91,6 @@ const GallerySection = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="px-4 py-2 bg-card/90 backdrop-blur-sm rounded-lg text-sm font-medium text-foreground">
-                  {image.alt}
-                </span>
-              </div>
             </motion.div>
           ))}
         </div>

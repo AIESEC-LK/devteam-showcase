@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+
 import { TeamMember } from "@/data/teamMembers";
 
 interface TeamCardProps {
@@ -7,11 +7,11 @@ interface TeamCardProps {
 
 const TeamCard = ({ member }: TeamCardProps) => {
   return (
-    <motion.div
-      whileHover={{ y: -8 }}
+    <div
+   
       className="group h-full"
     >
-      <div className="bg-card border border-border rounded-xl overflow-hidden h-full card-glow transition-all duration-300">
+      <div className="bg-card border border-border  rounded-xl overflow-hidden h-full card-glow transition-all duration-300">
         {/* Image Container */}
         <div className="relative overflow-hidden bg-muted h-64">
           <img
@@ -20,6 +20,21 @@ const TeamCard = ({ member }: TeamCardProps) => {
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-2 right-2 z-10 hover:scale-110 transition-transform duration-200"
+              aria-label={`${member.name}'s LinkedIn profile`}
+            >
+              <img
+                src="/linkedin.png"
+                alt="LinkedIn"
+                className="w-8 h-8"
+              />
+            </a>
+          )}
         </div>
 
         {/* Content */}
@@ -28,14 +43,14 @@ const TeamCard = ({ member }: TeamCardProps) => {
             {member.name}
           </h3>
           <p className="text-sm font-medium text-primary mb-3">{member.position}</p>
-          {member.description && (
+          {/* {member.description && (
             <p className="text-sm text-muted-foreground line-clamp-2">
               {member.description}
             </p>
-          )}
+          )} */}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
