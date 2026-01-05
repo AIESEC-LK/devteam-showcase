@@ -1,8 +1,11 @@
+
 import { motion } from "framer-motion";
 import { teamMembers } from "@/data/teamMembers";
 import TeamCard from "./TeamCard";
+import { useNavigate } from "react-router-dom";
 
 const TeamSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="team" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -48,7 +51,7 @@ const TeamSection = () => {
           <p className="text-muted-foreground text-lg">
             Want to join our team? We're always looking for passionate developers and designers!
           </p>
-          <span className=" text-primary cursor-pointer">Click Here !</span>
+          <span className=" text-primary cursor-pointer" onClick={() => navigate("/join-us")}>Click Here !</span>
         </motion.div>
       </div>
     </section>
