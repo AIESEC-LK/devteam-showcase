@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Instagram, Facebook, Youtube, Twitter, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import DevLogo from "./DevLogo";
 
 const quickLinks = [
@@ -18,6 +19,21 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer id="contact" className="relative bg-card border-t border-border">
       <div className="container mx-auto px-4 py-16">
@@ -26,11 +42,11 @@ const Footer = () => {
           <div className="space-y-6">
             <div>
               <div className="text-lg font-semibold text-foreground mb-2">Powered by</div>
-              <img 
+              {/* <img 
                 src="https://aiesec.lk/_next/image?url=%2Fimages%2Flogo%2FAIESEC%20Logo.png&w=256&q=75" 
                 alt="AIESEC Logo" 
                 className="h-8 invert brightness-0 mb-4"
-              />
+              /> */}
               <p className="text-muted-foreground">AIESEC in Sri Lanka</p>
             </div>
             <p className="text-muted-foreground text-sm">
@@ -63,7 +79,8 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={(e) => handleAnchorClick(e, link.href)}
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                   >
                     {link.name}
                   </a>

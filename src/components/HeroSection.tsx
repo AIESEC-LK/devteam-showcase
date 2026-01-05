@@ -5,7 +5,7 @@ import DevLogo from "./DevLogo";
 
 const codeLines = [
   { text: "const devTeam = {", delay: 0 },
-  { text: '  name: "AIESEC Dev.Team",', delay: 0.2 },
+  { text: ' name: "AIESEC Dev.Team",', delay: 0.2 },
   { text: '  location: "Sri Lanka",', delay: 0.4 },
   { text: "  passion: Infinity,", delay: 0.6 },
   { text: "  building: () => Future", delay: 0.8 },
@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-32">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
       
@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       
       {/* Glowing Orb */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute top-1/15 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
@@ -53,7 +53,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
-            <DevLogo size="xl" className="glow-text inline-block" />
+            <DevLogo className="glow-text inline-block" navbar={false} />
           </motion.div>
 
           {/* Tagline */}
@@ -107,7 +107,7 @@ const HeroSection = () => {
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
           >
             {[
-              { icon: Code2, label: "Projects Built", value: "2+" },
+              { icon: Code2, label: "Projects Built", value: "5+" },
               { icon: Terminal, label: "Lines of Code", value: "10K+" },
               { icon: Zap, label: "Passion Level", value: "∞" },
             ].map((stat, index) => (

@@ -2,27 +2,13 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import ProjectCard from "./ProjectCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-const projects = [
-  {
-    title: "Sincerely Sri Lankan",
-    description: "An immersive platform showcasing authentic Sri Lankan experiences for international volunteers. Features an interactive map, destination guides, testimonials, and comprehensive FAQ sections to help visitors discover the pearl of the Indian Ocean.",
-    image: "https://images.unsplash.com/photo-1586523969104-46e1b57529eb?w=800&auto=format&fit=crop&q=60",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://sincerely.aiesec.lk/",
-  },
-  {
-    title: "AIESEC Sri Lanka Website",
-    description: "The official website of AIESEC in Sri Lanka celebrating 30 years of youth leadership development. Showcases local chapters across 22+ universities, opportunities for exchanges, and the organization's impact on thousands of young Sri Lankans.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=60",
-    tags: ["Next.js", "TypeScript", "Modern UI/UX"],
-    liveUrl: "https://aiesec.lk/",
-  },
-];
+import { projects } from "@/data/projects";
 
 const ProjectsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <section id="projects" className="py-24 md:py-32 relative">
@@ -42,15 +28,21 @@ const ProjectsSection = () => {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Explore the digital products we've crafted for AIESEC Sri Lanka — 
-            each project designed to inspire and empower youth across the nation.
+            each project designed to inspire and empower youth across the world.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} index={index} />
-          ))}
-        </div>
+        <Carousel opts={{ loop: true }} className="max-w-8xl mx-auto">
+          <CarouselContent>
+            {projects.map((project, index) => (
+              <CarouselItem key={index} className="md:basis-1/2">
+                <ProjectCard {...project} index={index} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
 
         {/* Code comment decoration */}
         <motion.div
@@ -59,7 +51,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12 font-mono text-sm text-muted-foreground"
         >
-          <span className="text-code-green">{"/* More projects coming soon... */"}</span>
+          <span className="text-code-green">{"/* More interesting projects brewing in the kitchen */"}</span>
         </motion.div>
       </div>
     </section>
