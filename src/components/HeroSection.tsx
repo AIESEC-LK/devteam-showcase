@@ -107,7 +107,7 @@ const HeroSection = () => {
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
           >
             {[
-              { icon: Code2, label: "Projects Built", value: "2+" },
+              { icon: Code2, label: "Projects Built", value: "5+" },
               { icon: Terminal, label: "Lines of Code", value: "10K+" },
               { icon: Zap, label: "Passion Level", value: "∞" },
             ].map((stat, index) => (
