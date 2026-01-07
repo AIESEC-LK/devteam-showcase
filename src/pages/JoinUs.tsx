@@ -35,7 +35,7 @@ const JoinUs = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden mt-5">
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -128,14 +128,15 @@ const JoinUs = () => {
                 </div>
                 <div className="p-2 md:p-4 bg-background/50">
                   <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSdBtDfINXXm4J3wtR8vO7R5pgOppPQrqsc8iNgV-8ZwPKOl0Q/viewform?embedded=true"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSdfBKwiAcnM8EmOcrsHys_XKXi0enbCV76ohGC_fyFcOFy33A/viewform?usp=pp_url&embedded=true"
                     width="100%"
-                    height="800"
+                    height="1200"
                     frameBorder="0"
                     marginHeight={0}
                     marginWidth={0}
-                    className="w-full min-h-[800px] rounded-lg"
+                    className="w-full min-h-[1200px] rounded-lg"
                     title="Dev.Team Application Form"
+                    sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
                   >
                     Loading…
                   </iframe>
