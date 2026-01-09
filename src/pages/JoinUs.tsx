@@ -360,11 +360,7 @@ const benefits = [
     title: "Build Impact",
     description: "Create digital solutions that make a real difference in youth leadership development.",
   },
-  {
-    icon: Heart,
-    title: "Be Part of Something",
-    description: "Join a community that values innovation, creativity, and continuous learning.",
-  },
+
 ];
 
 const JoinUs = () => {
@@ -420,7 +416,7 @@ const JoinUs = () => {
             </motion.div>
 
             {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20">
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
