@@ -56,6 +56,13 @@ export const teamMembers: TeamMember[] = [
     image: "/memberPhotos/Dinan Jayasooriya.jpg",
     description: "Project Management",
     linkedin:"https://www.linkedin.com/in/dinan-jayasuriya-053b72263/"
+  },  {
+    id: 24,
+    name: "Navod Abeysekara",
+    position: "Project Manager",
+    image: "/memberPhotos/Navod Abayasekera.jpg",
+    description: "Project Management",
+    
   },
   {
     id: 8,

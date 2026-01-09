@@ -594,7 +594,7 @@ const JoinUs = () => {
                         Technical Positions
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        Product Manager, Senior/Junior Developer, Tech Lead, UI/UX Designer
+                        Product Manager, Tech Lead, Cyber Security Consultant, Software Engineer (TL), Software Engineer / Data Engineer, Tech Support, UI/UX Designer
                       </p>
                     </div>
                   </div>
