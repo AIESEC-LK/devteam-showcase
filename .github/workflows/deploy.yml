@@ -25,5 +25,5 @@ jobs:
             git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
             git fetch origin
             git reset --hard origin/main
-            docker-compose down
-            docker-compose up -d --build
+            docker compose down
+            docker compose up -d --build
