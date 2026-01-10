@@ -13,18 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build app
-        run: npm run build
-
       - name: Deploy to VM
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -37,6 +25,5 @@ jobs:
             git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
             git fetch origin
             git reset --hard origin/main
-            npm install
-            npm run build
-            pm2 restart devteam-showcase || pm2 start serve --name devteam-showcase -- -s dist -l 3000
+            docker-compose down
+            docker-compose up -d --build
