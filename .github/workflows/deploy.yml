@@ -25,7 +25,5 @@ jobs:
             git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
             git fetch origin
             git reset --hard origin/main
-            pm2 stop devteam-showcase || true
-            pm2 delete devteam-showcase || true
-            docker compose down
-            docker compose up -d --build
+            docker compose down 2>&1
+            docker compose up -d --build 2>&1
