@@ -447,14 +447,18 @@ const JoinUs = () => {
             >
               <div className="text-center mb-12">
                 <span className="inline-block font-mono text-primary text-sm mb-4">
-                  // open_positions
+                  // positions_closed
                 </span>
                 <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
                   Positions for <span className="text-gradient">Term 25.26.2</span>
                 </h2>
+                <div className="mb-6 inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                  <span className="text-red-500 font-semibold text-sm">🔒 Applications Closed:</span>
+                  <span className="text-foreground text-sm">Recruitment for Term 25.26.2 has ended</span>
+                </div>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  We're looking for passionate individuals to lead our technical teams. 
-                  Click on any role to learn more about the responsibilities and requirements.
+                  Thank you for your interest! Applications for these positions have closed. 
+                  Stay tuned for future opportunities with Dev.Team.
                 </p>
               </div>
 
@@ -493,7 +497,7 @@ const JoinUs = () => {
               </div>
             </motion.div>
 
-            {/* Application Timeline */}
+            {/* Application Timeline - COMMENTED OUT - APPLICATIONS CLOSED
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -510,7 +514,6 @@ const JoinUs = () => {
               </div>
 
               <div className="relative">
-                {/* Timeline line */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border hidden md:block" />
                 
                 <div className="space-y-8 md:space-y-0">
@@ -546,13 +549,13 @@ const JoinUs = () => {
                         </div>
                       </div>
                       
-                      {/* Center dot */}
                       <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 hidden md:block ${item.status === 'active' ? 'bg-primary border-background' : 'bg-muted border-background'}`} />
                     </motion.div>
                   ))}
                 </div>
               </div>
             </motion.div>
+            */}
 
             {/* CV Upload Guide Section */}
             <motion.div
@@ -698,51 +701,45 @@ const JoinUs = () => {
             >
               <div className="text-center mb-8">
                 <span className="inline-block font-mono text-primary text-sm mb-4">
-                  // application_form
+                  // application_closed
                 </span>
                 <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
-                  Apply <span className="text-gradient">Now</span>
+                  Applications <span className="text-gradient">Closed</span>
                 </h2>
                 <p className="text-muted-foreground">
-                  Click the link below to access the application form
+                  Thank you for your interest. Applications for Term 25.26.2 have closed.
                 </p>
               </div>
 
-              {/* Google Form Link Card */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden card-glow">
-                <div className="flex items-center gap-2 p-4 border-b border-border bg-card/80">
-                  <div className="w-3 h-3 rounded-full bg-destructive" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                  <span className="ml-4 text-xs text-muted-foreground font-mono">
-                    application.form
+              {/* Applications Closed Card */}
+              <div className="bg-card border border-red-500/20 rounded-xl overflow-hidden">
+                <div className="flex items-center gap-2 p-4 border-b border-red-500/20 bg-red-500/5">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <span className="ml-4 text-xs text-red-500 font-mono">
+                    applications.closed
                   </span>
                 </div>
                 <div className="p-8 text-center">
                   <div className="mb-6">
-                    <div className="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center mb-4">
-                      <Rocket className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-4">
+                      <span className="text-2xl text-white">🔒</span>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
-                      Ready to Join Dev.Team?
+                      Applications Closed
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      Fill out the application form to start your journey with us
+                      Thank you for your interest in joining Dev.Team. Applications for Term 25.26.2 have closed.
                     </p>
                   </div>
                   
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSdfBKwiAcnM8EmOcrsHys_XKXi0enbCV76ohGC_fyFcOFy33A/viewform?usp=pp_url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/25"
-                  >
-                    <span>Open Application Form</span>
-                    <ChevronRight className="w-5 h-5" />
-                  </a>
+                  <div className="inline-flex items-center gap-2 px-8 py-4 bg-muted/50 text-muted-foreground font-semibold rounded-lg cursor-not-allowed">
+                    <span>Application Period Ended</span>
+                  </div>
                   
                   <p className="text-xs text-muted-foreground mt-4">
-                    Opens in a new tab
+                    Stay tuned for future opportunities!
                   </p>
                 </div>
               </div>
@@ -863,18 +860,11 @@ const JoinUs = () => {
                   {/* Apply CTA */}
                   <div className="pt-4 border-t border-border">
                     <p className="text-center text-muted-foreground mb-4">
-                      Ready to take on this role? Apply now and join the Dev.Team!
+                      Applications for this role have closed. Thank you for your interest!
                     </p>
-                    <button
-                      onClick={() => {
-                        setIsDialogOpen(false);
-                        // Scroll to application form
-                        document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="w-full py-3 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
-                    >
-                      Apply for {selectedRole.title}
-                    </button>
+                    <div className="w-full py-3 px-6 bg-muted/50 text-muted-foreground font-semibold rounded-lg text-center cursor-not-allowed">
+                      Applications Closed
+                    </div>
                   </div>
                 </div>
               </ScrollArea>
