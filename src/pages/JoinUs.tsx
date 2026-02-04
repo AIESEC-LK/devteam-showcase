@@ -690,7 +690,7 @@ const JoinUs = () => {
                 <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
                   Guide for Uploading Your <span className="text-gradient">CV</span>
                 </h2>
-                       <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+                       <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-lg flex-col lg:flex-row">
                   <span className="text-orange-500 font-semibold text-sm">⚠️ Important:</span>
                   <span className="text-foreground text-sm"> Please ensure your CV includes the following items based on your position</span>
                 </div>
@@ -704,16 +704,14 @@ const JoinUs = () => {
                 {/* Technical Positions */}
                 <div className="bg-card border border-border rounded-xl p-6 card-glow">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                    <div className="w-10 flex-shrink-0 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
                       <Code2 className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-foreground">
                         Technical Positions
                       </h3>
-                      <p className="text-sm text-muted-foreground">
-                        Product Manager, Tech Lead, Cyber Security Consultant, Software Engineer (TL), Software Engineer / Data Engineer, Tech Support, UI/UX Designer
-                      </p>
+                     
                     </div>
                   </div>
 
