@@ -39,9 +39,60 @@ interface Role {
   requirements: string[];
   skillsAndQualities: string[];
   kpis: string[];
+  isLead?: boolean;
+  applyLink?: string;
 }
 
 const roles: Role[] = [
+  {
+    id: "lead",
+    title: "Lead - Dev.Team",
+    shortDescription: "Lead the entire Dev.Team and drive strategic initiatives across all technical domains.",
+    jobDescription: [
+      "Provide overall leadership and strategic direction for the Dev.Team",
+      "Coordinate with MCVP IM and other stakeholders on strategic initiatives",
+      "Oversee all technical projects and ensure alignment with organizational goals",
+      "Mentor and guide all team members across different roles",
+      "Drive innovation and adoption of new technologies and methodologies",
+      "Represent Dev.Team in MC and other high-level meetings",
+      "Establish and maintain Dev.Team culture and standards",
+      "Make critical decisions regarding project priorities and resource allocation"
+    ],
+    workingConditions: [
+      "15+ hours per week (flexible)",
+      "Total duration of 6 months (extendable upon completion)",
+      "Leadership responsibilities",
+      "Direct reporting to MCVP IM"
+    ],
+    requirements: [
+      "Extensive experience in software development and technical leadership",
+      "Previous leadership experience in AIESEC or similar organizations",
+      "Strong understanding of full-stack development and modern technologies",
+      "Excellent communication and stakeholder management skills",
+      "Experience with team management and project coordination",
+      "Strategic thinking and vision for technical innovation"
+    ],
+    skillsAndQualities: [
+      "Technical Leadership",
+      "Strategic Planning",
+      "Team Management",
+      "Stakeholder Management",
+      "Innovation & Vision",
+      "Decision Making",
+      "Communication",
+      "Mentorship"
+    ],
+    kpis: [
+      "Overall team performance and delivery",
+      "Successful completion of strategic initiatives",
+      "Team member satisfaction and development",
+      "Stakeholder satisfaction",
+      "Innovation adoption and implementation",
+      "Organizational impact and contribution"
+    ],
+    isLead: true,
+    applyLink: "https://docs.google.com/presentation/d/1MC7CiXKcFJxeMMoQ_ME-yzfpRWtmMKCWspAqbJLQJtY/edit?usp=sharing"
+  },
   {
     id: "product-manager",
     title: "Product Manager",
@@ -335,13 +386,13 @@ const contactInfo = {
   }
 };
 
-// Timeline data
+// Timeline data - Round 2
 const applicationTimeline = [
-  { phase: "Applications Open", date: "13th January 2026 - 20th January 2026", status: "active" },
-  { phase: "Application Review", date: "21st January 2026 - 23rd January 2026", status: "upcoming" },
-  { phase: "Interviews", date: "24th January 2026 - 3rd February 2026", status: "upcoming" },
-  { phase: "Results Announcement", date: "Second Week of February 2026", status: "upcoming" },
-  { phase: "Onboarding", date: "Second Week of February 2026", status: "upcoming" },
+  { phase: "Round 2 Applications Open", date: "4th February 2026 - 14th February 2026", status: "active" },
+  { phase: "Application Review", date: "15th February 2026 - 17th February 2026", status: "upcoming" },
+  { phase: "Interviews", date: "18th February 2026 - 25th February 2026", status: "upcoming" },
+  { phase: "Results Announcement", date: "Last Week of February 2026", status: "upcoming" },
+  { phase: "Onboarding", date: "First Week of March 2026", status: "upcoming" },
 ];
 
 const benefits = [
@@ -409,9 +460,13 @@ const JoinUs = () => {
               <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
                 Ready to <span className="text-gradient">Build</span> With Us?
               </h1>
+              <div className="mb-6 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500/10 to-primary/10 border border-green-500/20 rounded-lg">
+                <span className="text-green-500 font-bold text-sm">🚀 ROUND 2 NOW OPEN:</span>
+                <span className="text-foreground text-sm">Applications reopened !</span>
+              </div>
               <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                Join the Dev.Team and be part of a passionate community creating 
-                innovative digital solutions for AIESEC Sri Lanka.
+                Join the Dev.Team Round 2 and be part of a passionate community creating 
+                innovative digital solutions for AIESEC Sri Lanka. Now with Lead positions available!
               </p>
             </motion.div>
 
@@ -447,58 +502,123 @@ const JoinUs = () => {
             >
               <div className="text-center mb-12">
                 <span className="inline-block font-mono text-primary text-sm mb-4">
-                  // positions_closed
+                  // positions_open_round_2
                 </span>
                 <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
-                  Positions for <span className="text-gradient">Term 25.26.2</span>
+                  <span className="text-gradient">Round 2</span> Positions for Term 25.26.2
                 </h2>
-                <div className="mb-6 inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/20 rounded-lg">
-                  <span className="text-red-500 font-semibold text-sm">🔒 Applications Closed:</span>
-                  <span className="text-foreground text-sm">Recruitment for Term 25.26.2 has ended</span>
-                </div>
+                
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Thank you for your interest! Applications for these positions have closed. 
-                  Stay tuned for future opportunities with Dev.Team.
+                  We're reopening applications for Round 2 with exciting new opportunities including Lead position. 
+                  Join us in building the future of ASL Dev.Team !
                 </p>
               </div>
 
               {/* Roles Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {roles.map((role, index) => (
+              <div className="space-y-6">
+                {/* Lead Position - Special Highlight */}
+                {roles.filter(role => role.isLead).map((role, index) => (
                   <motion.div
                     key={role.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
-                    onClick={() => handleRoleClick(role)}
                     className="group cursor-pointer"
                   >
-                    <div className="relative bg-card border border-border rounded-xl p-6 h-full transition-all duration-300 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10 overflow-hidden">
-                      {/* Gradient background on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+                    <div className="relative bg-gradient-to-br from-primary/5 to-orange-500/5 border-2 border-gradient-to-r from-primary to-orange-500 rounded-xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 overflow-hidden">
+
+             
                       
-                      <div className="relative z-10">
-                        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-orange-500 transition-colors">
-                          {role.title}
-                        </h3>
-                        
-                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                          {role.shortDescription}
-                        </p>
-                        
-                        <div className="flex items-center text-primary text-sm font-medium">
-                          <span>Learn more</span>
-                          <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      <div className="flex flex-col md:flex-row gap-6 items-start">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center">
+                              <Star className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-2xl font-bold text-foreground mb-1">
+                                {role.title}
+                              </h3>
+                            </div>
+                          </div>
+                          
+                          <p className="text-muted-foreground mb-6 text-lg">
+                            {role.shortDescription}
+                          </p>
+                          
+                          <div className="flex flex-col sm:flex-row gap-3">
+                            <button
+                              onClick={() => handleRoleClick(role)}
+                              className="inline-flex items-center gap-2 px-6 py-3 bg-muted border border-border rounded-lg hover:bg-muted/80 transition-colors"
+                            >
+                              <span>View Details</span>
+                              <ChevronRight className="w-4 h-4" />
+                            </button>
+                            <a
+                              href={role.applyLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-orange-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-0.5"
+                            >
+                              <Star className="w-4 h-4" />
+                              <span>Apply for Lead</span>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </motion.div>
                 ))}
+                
+                {/* Other Positions */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {roles.filter(role => !role.isLead).map((role, index) => (
+                    <motion.div
+                      key={role.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.4, delay: 0.1 * (index + 1) }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="relative bg-card border border-border rounded-xl p-6 h-full transition-all duration-300 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10 overflow-hidden">
+                        {/* Gradient background on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+                        
+                        <div className="relative z-10">
+                          <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-orange-500 transition-colors">
+                            {role.title}
+                          </h3>
+                          
+                          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                            {role.shortDescription}
+                          </p>
+                          
+                          <div className="space-y-3">
+                            <button
+                              onClick={() => handleRoleClick(role)}
+                              className="flex items-center text-primary text-sm font-medium w-full"
+                            >
+                              <span>View Details</span>
+                              <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <a
+                              href="#application-form"
+                              className="inline-flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
+                            >
+                              <Briefcase className="w-4 h-4" />
+                              <span>Apply Now</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
-            {/* Application Timeline - COMMENTED OUT - APPLICATIONS CLOSED
-            <motion.div
+            {/* Application Timeline - ROUND 2 ACTIVE */}
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -506,10 +626,10 @@ const JoinUs = () => {
             >
               <div className="text-center mb-12">
                 <span className="inline-block font-mono text-primary text-sm mb-4">
-                  // application_timeline
+                  // round_2_timeline
                 </span>
                 <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
-                  Recruitment <span className="text-gradient">Timeline</span>
+                  Round 2 <span className="text-gradient">Timeline</span>
                 </h2>
               </div>
 
@@ -554,8 +674,7 @@ const JoinUs = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
-            */}
+            </motion.div> */}
 
             {/* CV Upload Guide Section */}
             <motion.div
@@ -699,46 +818,68 @@ const JoinUs = () => {
             >
               <div className="text-center mb-8">
                 <span className="inline-block font-mono text-primary text-sm mb-4">
-                  // application_closed
+                  // round_2_applications_open
                 </span>
                 <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
-                  Applications <span className="text-gradient">Closed</span>
+                  Round 2 Applications <span className="text-gradient">Open</span>
                 </h2>
                 <p className="text-muted-foreground">
-                  Thank you for your interest. Applications for Term 25.26.2 have closed.
+                  Ready to join Dev.Team? Apply now for Round 2 positions including the Lead role!
                 </p>
               </div>
 
-              {/* Applications Closed Card */}
-              <div className="bg-card border border-red-500/20 rounded-xl overflow-hidden">
-                <div className="flex items-center gap-2 p-4 border-b border-red-500/20 bg-red-500/5">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <span className="ml-4 text-xs text-red-500 font-mono">
-                    applications.closed
+              {/* Applications Open Card */}
+              <div className="bg-card border border-green-500/20 rounded-xl overflow-hidden">
+                <div className="flex items-center gap-2 p-4 border-b border-green-500/20 bg-green-500/5">
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <span className="ml-4 text-xs text-green-500 font-mono">
+                    applications.open.round2
                   </span>
                 </div>
                 <div className="p-8 text-center">
                   <div className="mb-6">
-                    <div className="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-4">
-                      <span className="text-2xl text-white">🔒</span>
+                    <div className="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-green-500 to-primary flex items-center justify-center mb-4">
+                      <span className="text-2xl text-white">🚀</span>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
-                      Applications Closed
+                      Round 2 Applications Open
                     </h3>
-                    <p className="text-muted-foreground text-sm">
-                      Thank you for your interest in joining Dev.Team. Applications for Term 25.26.2 have closed.
+                    <p className="text-muted-foreground text-sm mb-4">
+                      We're excited to announce Round 2 applications for Dev.Team Term 25.26.2. Apply now for regular positions or the prestigious Lead role!
                     </p>
                   </div>
                   
-                  <div className="inline-flex items-center gap-2 px-8 py-4 bg-muted/50 text-muted-foreground font-semibold rounded-lg cursor-not-allowed">
-                    <span>Application Period Ended</span>
+                  <div className="space-y-3">
+                    <a
+                      href="https://docs.google.com/presentation/d/1MC7CiXKcFJxeMMoQ_ME-yzfpRWtmMKCWspAqbJLQJtY/edit?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-orange-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-0.5 text-lg"
+                    >
+                      <Star className="w-5 h-5" />
+                      <span>Apply for the Lead Position</span>
+                    </a>
+                    
+                    <div className="text-muted-foreground text-sm">or</div>
+                    
+                    <a
+                      href="https://forms.google.com/your-regular-application-form"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+                    >
+                      <Briefcase className="w-5 h-5" />
+                      <span>Apply for Other Positions</span>
+                    </a>
                   </div>
                   
-                  <p className="text-xs text-muted-foreground mt-4">
-                    Stay tuned for future opportunities!
-                  </p>
+                  {/* <div className="mt-6 p-4 bg-muted/30 rounded-lg">
+                    <p className="text-xs text-muted-foreground">
+                      Application Deadline: <strong className="text-foreground">14th February 2026</strong>
+                    </p>
+                  </div> */}
                 </div>
               </div>
 
@@ -750,7 +891,8 @@ const JoinUs = () => {
                 className="text-center mt-12 font-mono text-sm text-muted-foreground"
               >
                 <span className="text-terminal-green">$</span> await devTeam.
-                <span className="text-primary">addMember</span>(you);
+                <span className="text-primary">addMember</span>(you); 
+                <span className="text-green-500">// Round 2 Active!</span>
               </motion.div>
             </motion.div>
           </div>
@@ -858,10 +1000,30 @@ const JoinUs = () => {
                   {/* Apply CTA */}
                   <div className="pt-4 border-t border-border">
                     <p className="text-center text-muted-foreground mb-4">
-                      Applications for this role have closed. Thank you for your interest!
+                      Ready to join us? Round 2 applications are now open!
                     </p>
-                    <div className="w-full py-3 px-6 bg-muted/50 text-muted-foreground font-semibold rounded-lg text-center cursor-not-allowed">
-                      Applications Closed
+                    <div className="space-y-3">
+                      {selectedRole && selectedRole.isLead ? (
+                        <a
+                          href={selectedRole.applyLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-3 px-6 bg-gradient-to-r from-primary to-orange-500 text-white font-bold rounded-lg text-center inline-flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-0.5"
+                        >
+                          <Star className="w-4 h-4" />
+                          <span>Apply for Lead Position</span>
+                        </a>
+                      ) : (
+                        <a
+                          href="https://forms.google.com/your-regular-application-form"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-3 px-6 bg-primary text-white font-semibold rounded-lg text-center inline-flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                        >
+                          <Briefcase className="w-4 h-4" />
+                          <span>Apply Now</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
