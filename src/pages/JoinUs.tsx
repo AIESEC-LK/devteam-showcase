@@ -865,7 +865,7 @@ const JoinUs = () => {
                     <div className="text-muted-foreground text-sm">or</div>
                     
                     <a
-                      href="https://forms.google.com/your-regular-application-form"
+                      href="https://docs.google.com/forms/d/1RcodKonCXGstG2VLpwzYVAlg04a-9kWO10wdFd-C0NQ/edit"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
@@ -1015,7 +1015,7 @@ const JoinUs = () => {
                         </a>
                       ) : (
                         <a
-                          href="https://forms.google.com/your-regular-application-form"
+                          href="https://docs.google.com/forms/d/1RcodKonCXGstG2VLpwzYVAlg04a-9kWO10wdFd-C0NQ"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full py-3 px-6 bg-primary text-white font-semibold rounded-lg text-center inline-flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
