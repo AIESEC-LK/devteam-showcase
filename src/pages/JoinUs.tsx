@@ -92,7 +92,10 @@ const roles: Role[] = [
     ],
     isLead: true,
     applyLink: "https://docs.google.com/presentation/d/1MC7CiXKcFJxeMMoQ_ME-yzfpRWtmMKCWspAqbJLQJtY/edit?usp=sharing"
-  },
+  }
+  // Commented out other roles - keeping only Lead role active
+  /*
+  ,
   {
     id: "product-manager",
     title: "Product Manager",
@@ -366,6 +369,7 @@ const roles: Role[] = [
       "Participation in sprint meetings and other gatherings"
     ]
   }
+  */
 ];
 
 // Contact info
@@ -760,7 +764,7 @@ const JoinUs = () => {
                   </div>
                 </div>
 
-                {/* Operations Manager */}
+                {/* Operations Manager - Commented out for Lead application focus
                 <div className="bg-card border border-border rounded-xl p-6 card-glow">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center">
@@ -805,6 +809,7 @@ const JoinUs = () => {
                     </div>
                   </div>
                 </div>
+                */}
               </div>
             </motion.div>
 
@@ -862,6 +867,7 @@ const JoinUs = () => {
                       <span>Apply for the Lead Position</span>
                     </a>
                     
+                    {/* Commented out "Apply for Other Positions" for Lead application focus
                     <div className="text-muted-foreground text-sm">or</div>
                     
                     <a
@@ -873,6 +879,7 @@ const JoinUs = () => {
                       <Briefcase className="w-5 h-5" />
                       <span>Apply for Other Positions</span>
                     </a>
+                    */}
                   </div>
                   
                   {/* <div className="mt-6 p-4 bg-muted/30 rounded-lg">
