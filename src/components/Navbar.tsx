@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import DevLogo from "./DevLogo";
 
 interface NavbarProps {
@@ -18,6 +19,7 @@ const navLinks = [
 
 const Navbar = ({ onTeamClick }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   return (
     <motion.nav
@@ -52,6 +54,13 @@ const Navbar = ({ onTeamClick }: NavbarProps) => {
                 {link.name}
               </motion.a>
             ))}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,6 +99,16 @@ const Navbar = ({ onTeamClick }: NavbarProps) => {
                 {link.name}
               </a>
             ))}
+            <button
+              onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark");
+                setIsOpen(false);
+              }}
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2 cursor-pointer"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
+            </button>
           </div>
         </motion.div>
       )}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
@@ -12,13 +13,15 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, description, image, tags, liveUrl, githubUrl, index }: ProjectCardProps) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-card border border-border rounded-xl overflow-hidden card-glow"
+      onClick={() => navigate(`/project/${index}`)}
+      className="group bg-card border border-border rounded-xl overflow-hidden card-glow cursor-pointer"
     >
       {/* Image Container */}
       <div className="relative h-48 md:h-56 overflow-hidden">
@@ -61,6 +64,7 @@ const ProjectCard = ({ title, description, image, tags, liveUrl, githubUrl, inde
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
@@ -72,6 +76,7 @@ const ProjectCard = ({ title, description, image, tags, liveUrl, githubUrl, inde
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="w-4 h-4" />
