@@ -1,37 +1,31 @@
-import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
-import TeamSection from "../components/TeamSection";
+import ImpactStats from "../components/ImpactStats";
 import ProjectsSection from "../components/ProjectsSection";
+import TechStack from "../components/TechStack";
+import TeamSection from "../components/TeamSection";
+import NextTerm from "../components/NextTerm";
+import GitHubSection from "../components/GitHubSection";
 import GallerySection from "../components/GallerySection";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 const Index = () => {
-  useEffect(() => {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
-        if (href) {
-          document.querySelector(href)?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-  }, []);
-
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <AboutSection />
-        <TeamSection />
+        <ImpactStats />
         <ProjectsSection />
+        <TechStack />
+        <TeamSection />
+        <NextTerm />
+        <GitHubSection />
         <GallerySection />
+        <Contact />
       </main>
       <Footer />
     </div>

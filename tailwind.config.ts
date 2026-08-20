@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        display: ['Space Grotesk', 'Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,10 +63,22 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         glow: "hsl(var(--glow))",
-        "code-green": "hsl(var(--code-green))",
-        "code-purple": "hsl(var(--code-purple))",
-        "code-blue": "hsl(var(--code-blue))",
-        "terminal-green": "hsl(var(--terminal-green))",
+        mint: {
+          DEFAULT: "hsl(var(--mint))",
+          foreground: "hsl(var(--mint-foreground))",
+        },
+        pink: {
+          DEFAULT: "hsl(var(--pink))",
+          foreground: "hsl(var(--pink-foreground))",
+        },
+        sky: {
+          DEFAULT: "hsl(var(--sky))",
+          foreground: "hsl(var(--sky-foreground))",
+        },
+        peach: {
+          DEFAULT: "hsl(var(--peach))",
+          foreground: "hsl(var(--peach-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

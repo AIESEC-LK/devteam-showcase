@@ -11,7 +11,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Dinuka",
-    position: "MCVP IM",
+    position: "MCPe & MCVP IM 25.26",
     image: "/memberPhotos/Dinuka_Avinash.jpg",
     description: "අපේ FrontMan",
     linkedin:"https://www.linkedin.com/in/dinuka-avinash/"
@@ -19,14 +19,22 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
+    name: "Akesh Chandrasiri",
+    position: "Cyber Security Consultant → Lead",
+    image: "/memberPhotos/Akesh Chandrasiri Official Picture.jpg",
+    description: "Cyber Security Specialist",
+    linkedin:"https://www.linkedin.com/in/akesh-chandrasiri-010779211/"
+  },
+  {
+    id: 3,
     name: "Chamod Wanigasekara",
-    position: "Lead",
+    position: "Lead 25.26.1",
     image: "/memberPhotos/Chamod Wanigasekara.jpg",
     description: "Development Team Lead",
     linkedin:"https://www.linkedin.com/in/chamod-wanigasekara-b99504245/"
   },
   {
-    id: 3,
+    id: 6,
     name: "Lahiru Jayathilaka",
     position: "Tech Lead",
     image: "/memberPhotos/Lahiru Jayathilaka.jpg",
@@ -63,14 +71,6 @@ export const teamMembers: TeamMember[] = [
     image: "/memberPhotos/Navod Abayasekera.jpg",
     description: "Project Management",
     
-  },
-  {
-    id: 8,
-    name: "Akesh Chandrasiri",
-    position: "Cyber Security Consultant",
-    image: "/memberPhotos/Akesh Chandrasiri Official Picture.jpg",
-    description: "Cyber Security Specialist",
-    linkedin:"https://www.linkedin.com/in/akesh-chandrasiri-010779211/"
   },
   {
     id: 9,
@@ -140,7 +140,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 17,
     name: "Lasal Rathnayake",
-    position: "Software Engineer",
+    position: "Software Engineer → Software Engineer Team Leader",
     image: "/memberPhotos/Lasal Rathnayake.jpg",
     description: "Software Development",
   },
@@ -179,5 +179,75 @@ export const teamMembers: TeamMember[] = [
     position: "UI/UX Engineer",
     image: "/memberPhotos/Vishan.png",
     description: "User Interface & User Experience Design",
+  },
+  {
+    id: 25,
+    name: "Sasin Perera",
+    position: "HR Member",
+    image: "/memberPhotos/HR Specialist - Sasin Perera.jpg",
+    description: "People Operations",
+  },
+  {
+    id: 26,
+    name: "Sajana Kankanige",
+    position: "Project Manager",
+    image: "/memberPhotos/PM Sajana Kankanige.jpg",
+    description: "Project Management",
+  },
+  {
+    id: 27,
+    name: "Gamidu Welikanna",
+    position: "Project Manager",
+    image: "/memberPhotos/PM- Gamidu Welikanna.jpg",
+    description: "Project Management",
+  },
+  {
+    id: 28,
+    name: "Apurwa Fernando",
+    position: "Software Engineer",
+    image: "/memberPhotos/SE-Apurwa Fernando.JPG",
+    description: "Software Development",
+  },
+  {
+    id: 29,
+    name: "Gaveesha Wickrama",
+    position: "Software Engineer",
+    image: "/memberPhotos/SE-Gaveesha Wickrama.jpg",
+    description: "Software Development",
+  },
+  {
+    id: 30,
+    name: "Harindu Sadeepa",
+    position: "Software Engineer",
+    image: "/memberPhotos/SE-Harindu Sadeepa.jpg",
+    description: "Software Development",
+  },
+  {
+    id: 31,
+    name: "Lakshi Senadheera",
+    position: "Software Engineer",
+    image: "/memberPhotos/SE-Lakshi Senadheera.jpg",
+    description: "Software Development",
+  },
+  {
+    id: 32,
+    name: "Pasindu Jayasundara",
+    position: "Software Engineer",
+    image: "/memberPhotos/SE-Pasindu Jayasundara.png",
+    description: "Software Development",
+  },
+  {
+    id: 33,
+    name: "Shanuka Gallage",
+    position: "Software Engineer",
+    image: "/memberPhotos/SE-Shanuka Gallage.jpeg",
+    description: "Software Development",
+  },
+  {
+    id: 34,
+    name: "Bimsara Madurapperuma",
+    position: "Tech Lead",
+    image: "/memberPhotos/Tech Lead Development Bimsara Madurapperuma.jpg",
+    description: "Technical Leadership",
   },
 ];

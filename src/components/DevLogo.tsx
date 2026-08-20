@@ -7,31 +7,28 @@ interface DevLogoProps {
   navbar?: boolean;
 }
 
-const sizeClasses = {
-  sm: "text-lg",
-  md: "text-2xl",
-  lg: "text-4xl",
-  xl: "text-6xl md:text-7xl",
+const heights: Record<NonNullable<DevLogoProps["size"]>, string> = {
+  sm: "h-7",
+  md: "h-9",
+  lg: "h-14",
+  xl: "h-20",
 };
 
-const DevLogo = ({  animated = true, className = "" , navbar = true }: DevLogoProps) => {
-  const Component = animated ? motion.span : "span";
-  
+const DevLogo = ({ animated = true, className = "", navbar = true, size }: DevLogoProps) => {
+  const Component = animated ? motion.img : "img";
+  const height = heights[size ?? (navbar ? "sm" : "lg")];
+
   return (
     <Component
-      className={`font-mono font-bold tracking-tight ${navbar ? "lg:text-2xl" : "text-4xl xl:text-7xl"} ${className}`}
+      src="/dev-team-logo.png"
+      alt="Dev.Team — AIESEC in Sri Lanka"
+      className={`${height} w-auto ${className}`}
       {...(animated && {
         initial: { opacity: 0 },
         animate: { opacity: 1 },
         transition: { duration: 0.5 },
       })}
-    >
-      <span className="text-muted-foreground">&lt;/</span>
-      <span className="text-gradient">Dev</span>
-      <span className="text-foreground">.</span>
-      <span className="text-primary">Team</span>
-      <span className="text-muted-foreground">&gt;</span>
-    </Component>
+    />
   );
 };
 
